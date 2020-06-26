@@ -14,3 +14,10 @@
 ### 编程题
 
 1.
+```
+$ mkdir project
+$ cd project
+$ mycli
+```
+
+2.
