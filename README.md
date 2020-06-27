@@ -21,3 +21,8 @@ $ mycli
 ```
 
 2.
+```
+$ cd pages-boilerplate
+$ yarn
+$ yarn gulp compile
+```
