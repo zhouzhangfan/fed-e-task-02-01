@@ -26,3 +26,8 @@ $ cd pages-boilerplate
 $ yarn
 $ yarn gulp compile
 ```
+
+3.
+```
+$ yarn grunt
+```
