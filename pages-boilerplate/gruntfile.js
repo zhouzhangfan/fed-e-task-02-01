@@ -1,4 +1,4 @@
-const sass = require('grunt-sass')
+const sass = require('node-sass')
 const loadGruntTask = require('load-grunt-tasks')
 
 module.exports = grunt => {
@@ -30,19 +30,21 @@ module.exports = grunt => {
         }                
       }
     },
-    // watch: {
-    //   js: {
-    //     files: ['src/assets/scripts/*.js'],
-    //     tasks: ['babel'],
-    //   },
-    //   css: {
-    //     files: ['src/scss/*.scss'],
-    //     tasks: ['sass'],
-    //   }
-    // }
+    htmlmin: {
+      options: {                                 // Target options
+        removeComments: true,
+        collapseWhitespace: true
+      },
+      main: {
+        files: {                                   // Dictionary of files
+          'dist-grunt/index.html': 'src/index.html',     // 'destination': 'source'
+          'dist-grunt/about.html': 'src/about.html'
+        }
+      }
+    }
   })
 
   loadGruntTask(grunt)
     
-  grunt.registerTask('default', ['clean', 'sass', 'babel' ])
+  grunt.registerTask('default', ['clean', 'sass', 'babel', 'htmlmin' ])
 }
